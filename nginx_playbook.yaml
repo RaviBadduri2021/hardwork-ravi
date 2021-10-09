@@ -1,0 +1,9 @@
+---
+    - name: installing Nginx server in node
+      become: yes
+      connection: ssh
+      hosts: All-Slave
+
+      tasks:
+          - name: updating apt cache
+

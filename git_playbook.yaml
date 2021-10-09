@@ -1,0 +1,19 @@
+---
+    - name: installing git using ansible playbook
+      become: yes
+      remote_user: badduri
+      become_method: sudo
+      connection: ssh
+      hosts: all
+
+      tasks: 
+          - name: update the repository    
+            apt_repository:
+                repo: 'ppa:git-core/ppa'
+                state: present
+          - name: install git from the repo
+            apt:
+                name: git
+                state: present
+                update_cache: yes
+
